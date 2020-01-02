@@ -7,7 +7,7 @@ ENV PYTHONUNBUFFERED=1
 
 RUN addgroup -S ${APP_GROUP}; \
      adduser -S ${APP_USER} -G ${APP_GROUP}; \
-     apk add --no-cache python3; \
+     apk add --no-cache python3 gcc; \
      if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi; \
      python3 -m ensurepip; \
      rm -r /usr/lib/python*/ensurepip; \
