@@ -1,4 +1,4 @@
-FROM 3.9.0a2-alpine3.10
+FROM python:3.9.0a2-alpine3.10
 
 ARG APP_USER=molecule
 ARG APP_GROUP=molecule
