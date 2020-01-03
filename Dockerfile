@@ -11,8 +11,7 @@ RUN addgroup -S ${APP_GROUP}; \
      ln -s /usr/include/locale.h /usr/include/xlocale.h; \
      if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi; \
      python3 -m ensurepip; \
-     rm -r /usr/lib/python*/ensurepip; \
-     pip3 install --no-cache --upgrade pip setuptools wheel virtualenv; \
+     pip3 install --no-cache --upgrade pip setuptools wheel virtualenv ollections-extended; \
      if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi; \
      rm -rf /var/cache/apk/*
 
