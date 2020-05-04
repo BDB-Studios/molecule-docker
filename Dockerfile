@@ -7,6 +7,7 @@ ENV PYTHONUNBUFFERED=1
 
 RUN addgroup -S ${APP_GROUP}; \
      adduser -S ${APP_USER} -G ${APP_GROUP}; \
+     apk update; \
      apk add --no-cache gcc g++; \
      ln -s /usr/include/locale.h /usr/include/xlocale.h; \
      if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi; \
@@ -19,7 +20,7 @@ USER ${APP_USER}
 
 RUN mkdir -p ~/tests; \
     cd $_; \
-    virtualenv .venv; \
+    python -m virtualenv .venv; \
     source .venv/bin/activate; \
     pip install -U molecule molecule[docker]
  
